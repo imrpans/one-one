@@ -1,0 +1,484 @@
+/* 第一区块 */
+.pian-1{
+	margin-top: 0px;
+}
+
+/* 文字背景线条 */
+.xianrongqi{/*-避免溢出时影响其它元素*/
+	height: 50px;
+	background-color: #DFDFDF;
+	overflow: hidden;
+}
+.biaotixian{
+	height: 0px;
+	margin-top: 23px;
+}
+.biaotixian h2{
+	text-align: center;
+	background-image:radial-gradient(#a7a7a7, transparent),
+					 radial-gradient(#949494, transparent);
+	font-size: 20px;
+	line-height: 2px;
+}
+.biaotixian h2 span{
+	background-color:#DFDFDF;
+	border-radius: 0%;
+}
+
+/* 点击选项卡 */
+.xk-1{
+	position: relative;
+	margin-top: 30px;
+	margin-left: 0px;
+	height: 530px;
+	width: 800px;
+}
+.xk-1 li input:checked~.ye{
+	display: block;
+}
+.xk-1 input:checked~.tab-header .tab-bin,.xk-1 input:checked~.tab-header{
+	background-color: #4D9F0C;
+}
+.xk-1 li{
+	float: left;
+}
+.tab-header{
+	display: inline-block;
+	height: 50px;
+	width: 150px;
+	text-align: center;
+	line-height: 50px;
+	background-color:#EDEDED;
+	margin-right: 5px;
+	font-size: 30px;
+}
+.ye{
+	position: absolute;
+	top: 52px;
+	left: 0px;
+	width: 730px;
+	height: 454px;
+	background-color: #4D9F0C;
+	display: none;
+}
+.ye-1{
+	background-image: url(../uploads/banner1.jpg);
+	display: block;
+}
+.ye-2{
+	background-image: url(../uploads/banner2.jpg);
+}
+.ye-3{
+	background-image: url(../uploads/banner3.jpg);
+}
+.xk-1 li input{
+	display: none;
+}
+.tab-bin{
+	position: absolute;
+	height: 10px;
+	width: 10px;
+	top: 460px;
+	z-index: 1;
+	border:1px solid #4D9F0C;
+	border-radius: 50%;
+}
+.tab-bin-1{
+	left: 50px;
+}
+.tab-bin-2{
+	left: 85px;
+}
+.tab-bin-3{
+	left: 120px;
+}
+.tab-bin:hover{
+	background-color: #4D9F0C;
+}
+
+/* 纯CSS滚动动画无法手动切换，并显示进度 */
+@keyframes lunfan{
+	0%{
+		margin-left: 0px;
+	}
+	100%{
+	  margin-left: -2190px;
+    }
+}
+@keyframes biaoji1{
+	0%,34% {
+    background-color: #4D9F0C;
+  }
+	35%,100%{
+    background-color: #FFFFFF;
+  }
+}
+@keyframes biaoji2{
+	0%,34% {
+	background-color: #FFFFFF;
+  }
+	35%,69% {
+    background-color: #4D9F0C;
+  }
+	70%,100%{
+    background-color: #FFFFFF;
+  }
+}
+@keyframes biaoji3{
+	0%,69% {
+    background-color: #FFFFFF;
+  }
+	70%,99%{
+    background-color: #4D9F0C;
+  }
+	100%{
+	background-color: #FFFFFF;
+  }
+}
+.biaoji-1,.biaoji-2,.biaoji-3{
+	position: absolute;
+	height: 15px;
+	width: 15px;
+	top: 400px;
+	border: 1px solid #0055FF;
+	border-radius: 50%;
+}
+.biaoji-1{
+	margin-left: 50px;
+	animation: biaoji1 9s linear infinite running;
+}
+.biaoji-2{
+	margin-left: 100px;
+	animation: biaoji2 9s linear infinite running;
+}
+.biaoji-3{
+	margin-left: 150px;
+	animation: biaoji3 9s linear infinite running;
+}
+.lunfan-1{
+	position: relative;
+	margin-top: 0px;
+	width: 730px;
+	height: 454px;
+	overflow: hidden;
+}
+.lunfan-1:hover div{
+	animation-play-state: paused;
+}
+.donghua{
+	width: 2920px;
+	height: 454px;
+	/*-linear位置的值是一个时序函数，用于控制关键帧之间百分比的插值,infinite表示无限循环，默认单次,running控制开关播放*/
+	animation: lunfan 9s linear infinite running;
+}
+.donghua img{
+	float: left;
+	width: 730px;
+	height: 454px;
+}
+
+/* 图片轮播图 */
+.duogong{
+	position: relative;
+	margin-top: 20px;
+	width: 730px;
+	height: 454px;
+	overflow: hidden;
+}
+.duogong:hover .ore,.duogong:hover .netx,.duogong:hover .fianji{
+	display: block;
+}
+.img{/*-浮动定位均可，并设置过渡,否则瞬间切换图片*/
+	position: absolute;
+	left: 0;
+	transform: scale(1.05);
+	transition: transform 1s;
+}
+.gaoduchi{/*-动态添加删除改变样式，触发过渡*/
+	z-index:1;
+	transform: scale(1);
+}
+.chushi-one{/*-初始化第一个图片*/
+	z-index:1;
+}
+.fianji{
+	position: absolute;
+	top: 400px;
+	z-index:2;
+	display:none;
+	left: 30px;
+}
+.ban{
+	margin-left: 10px;
+	float: left;
+	height: 15px;
+	width: 15px;
+	border-radius: 50%;
+	border:1px solid #0055FF;
+}
+.biahuanyans{
+	background-color: #0055FF;
+}
+.ore,
+.netx{
+	top: 210px;
+	position: absolute;
+	width: 40px;
+	height: 60px;
+	background-color: #3f3f3f;
+	z-index: 2;
+	opacity:0.2;
+	display: none;
+}
+.ore{
+	border-radius: 0 50% 50% 0;
+}
+.netx{
+	right: 0;
+	border-radius: 50% 0 0 50% ;
+}
+.ore:hover,
+.netx:hover{
+	opacity: 1;
+}
+
+/* 容器轮番图 */
+.duogongeree{
+	position: relative;
+	margin-top: 20px;
+	width: 730px;
+	height: 454px;
+	overflow: hidden;
+}
+.imglist{
+	width: 3650px;
+	margin-left: 0px;
+	height: 454px;
+	transition: margin-left 0.5s linear;
+}
+.img-2{
+	float: left;
+	height: 454px;
+	width: 730px;
+}
+.bbbbbb{
+	position: absolute;
+	top: 400px;
+	z-index: 2;
+	left: 30px;
+}
+.ba2{
+	margin-left: 10px;
+	float: left;
+	height: 15px;
+	width: 15px;
+	border-radius: 50%;
+	border: 1px solid #0055FF;
+	z-index: 2;
+}
+.ba2.chushi{
+	background-color: #E60012;
+}
+.arryou,.arrzuo{
+	top: 210px;
+	position: absolute;
+	width: 40px;
+	height: 60px;
+	background-color: #3f3f3f;
+	z-index: 2;
+	opacity:0.2;
+}
+.arrzuo{
+	border-radius: 0 50% 50% 0;
+}
+.arryou{
+	right: 0;
+	border-radius: 50% 0 0 50% ;
+}
+
+/* 悬停抖出 */
+.douchu{
+	height: 200px;
+	width: 200px;
+	background-color: #f9f9f9;
+	box-shadow:none;
+	transform: translateY(0);
+	transition: transform  0.6s,box-shadow 0.6s;
+}
+.douchu:hover{
+	transform: translateY(-5px);
+	/* x偏移量 | y偏移量 | 阴影模糊半径 | 阴影扩散半径 | 阴影颜色 */
+	box-shadow: 0px 0px 50px 2px rgba(77, 106, 232, 0.2);
+}
+
+/* 遮罩 */
+.tanchu{/*-容器盒宽高必须确定并溢出隐藏，子元素绝对定位脱离布局流-*/
+	position: relative;
+	overflow: hidden;
+	height: 118px;
+	width: 193px;
+}
+.tanchu :is(img,div){
+	position: absolute ;
+}
+.zhezhaoceng{
+	text-align: center;
+	line-height:118px ;
+	height: 118px;
+	width: 193px;
+	background-color: rgba(0,0,0,.1);
+	transform: scale(1,0);
+	transition: transform 0.5s;
+}
+.tanchu:hover .zhezhaoceng{
+	transform: scale(1);
+}
+
+/* 放大镜 */
+.rongqwi{
+	position: relative;
+	width: 365px;
+	height: 227px;
+	background-color: #0055FF;
+	overflow: hidden;
+}
+.imggxiao{
+	height: 100%;
+	width: 100%;
+}
+.fangdajing{
+	overflow: hidden;
+	position: absolute;
+	top:0;
+	left: 0;
+	width:90px;
+	height: 90px;
+	border-radius: 50%;
+	display: none;
+	pointer-events: none; /*-穿透当前元素的鼠标事件*/
+}
+.rongqwi:hover .fangdajing{
+	display: block;
+}
+.fangdajing img{
+	position: absolute;
+	top:0;
+	left: 0;
+}
+
+/* 图片懒加载 */
+.tupianjiazai{
+	margin-top: 30px;
+	background-color: #aaaaff;
+}
+
+/* 线性延迟动画 */
+.rong{
+	position:relative;
+	height: 200px;
+	width: 200px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 20px;
+}
+@keyframes chang1{
+	0%{height: 70px;}
+	25%{height: 150px;}
+	50%{height: 70px;}
+}
+.chantiao{
+	width: 30px;
+	height: 70px;
+	margin: 10px;
+	background-color: forestgreen;
+	animation: chang1 1s linear infinite;
+}
+.chantiao:nth-child(1){
+	animation-delay: 0s;
+}
+.chantiao:nth-child(2){
+	animation-delay: 0.2s;
+}
+.chantiao:nth-child(3){
+	animation-delay: 0.4s;
+}
+
+/* 渐变圆环旋转动画 */
+.rong2{
+	position:relative;
+	height: 200px;
+	width: 200px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 20px;
+}
+@keyframes jiaz{
+	0%{
+		transform:rotateZ(0);
+	}
+	100%{
+		transform:rotateZ(360deg);
+	}
+}
+.chantiao1{
+	height: 100px;
+	width: 100px;
+	border-radius:50%;
+	border:20px solid transparent;
+	background-image:linear-gradient(#fff,#fff),conic-gradient(rgba(255,0,0,0) 0% 0%,  rgba(255,0,0,.8)  100%);
+	background-clip: content-box,border-box;
+	background-origin:content-box,border-box;
+	animation:jiaz 1.5s linear infinite;
+}
+
+/* 渐变圆环进度条动画 */
+.rong3{
+	position:relative;
+	height: 200px;
+	width: 200px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 20px;
+}
+.jindutiao{
+	text-align: center;
+	line-height: 5em;
+	height: 5em;
+	width: 5em;
+	border-radius:50%;
+	padding:1em;
+	background-image:linear-gradient(#fff,#fff),conic-gradient(rgba(255,0,0,.8) 100%,rgba(255,0,0,0) 100%);
+	background-clip: content-box,padding-box;
+	background-origin:content-box,padding-box;
+}
+
+/* 时钟 */
+.clock{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 500px;
+	height: 100px;
+	margin-left: 50px;
+	background-color: #333333;
+	font-size: 60px;
+	font-weight: bold;
+	color: #FFFFFF;
+}
+.clock .fenge{
+	align-self: start;
+	margin: 10px 5px 0 5px;
+}
+.clock div{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.clock div span{
+	transform: rotateX(0deg);
+	transition: transform 0.8s;
+	background-color: #949494;
+}

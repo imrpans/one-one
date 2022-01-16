@@ -1,0 +1,68 @@
+/*去掉标签的默认margin和padding*/
+html,body,header,nav,aside,article,section,main,footer,ul,ol,dl,dd,dt,p,h1,h2,h3,h4,h5,h6,form,fieldset,legend,img{
+	margin:0;
+	padding:0;
+}
+
+/*em 和 i 斜体的文字不倾斜 ，去掉strong的字重粗细*/
+em,i,strong,b{
+	font-style:normal;
+	font-weight:normal;
+}
+
+/*去掉图片的边框和底边空白缝隙*/
+img{
+	border:0;
+	vertical-align: middle;
+}
+
+/*去掉ul前面的小点*/
+ul,ol,li{
+	list-style:none;
+}      
+
+/*去掉input标签默认的padding-top，padding-bottom，border，outline-style*/
+input{
+	outline-style:none;
+	padding-top:0;
+	padding-bottom:0;
+	border: none;
+}
+
+/*去掉a标签的下划线和设置为黑色文本*/
+a{
+	text-decoration: none;
+	color: #000000 ;
+	
+}
+
+a:hover{
+	color: #E60012;
+}
+
+/* 当我们鼠标经过button 按钮的时候，鼠标变成小手 */
+button{
+	cursor: pointer;
+}
+
+
+/*给body设置一个统一的字体样式和背景颜色*/
+body{
+	background: #fff;
+	color: #000000;
+	font: 12px/1 \5FAE\8F6F\96C5\9ED1, \5B8B\4F53, "Hiragino Sans GB", STHeiti, "WenQuanYi Micro Hei", "Droid Sans Fallback", SimSun, sans-serif;
+} 
+
+/*浮动*/
+.fl{
+	float: left;
+}
+
+.fr{
+	float: right;
+}
+
+/*溢出隐藏并块格式化容器*/
+.bfc{
+	overflow: hidden;
+}
